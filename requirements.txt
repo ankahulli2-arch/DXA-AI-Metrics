@@ -1,0 +1,13 @@
+torch==2.5.1
+torchvision==0.20.1
+segmentation-models-pytorch==0.5.0
+albumentations==2.0.8
+albucore==0.0.24
+opencv-python-headless==4.10.0.84
+pydicom==2.4.4
+numpy==2.0.2
+scikit-image==0.24.0
+matplotlib==3.9.0
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+python-multipart==0.0.12
