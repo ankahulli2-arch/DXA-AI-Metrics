@@ -2,8 +2,6 @@
 set -e
 cd "$(dirname "$0")"
 
-source .venv/bin/activate
-
 OUT_DIR=""
 
 if [ "$1" = "save" ]; then
