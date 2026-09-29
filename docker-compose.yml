@@ -1,0 +1,28 @@
+version: "3.9"
+
+services:
+  batch:
+    build: .
+    image: dxa-ai-metrics:latest
+    volumes:
+      - ./config:/app/config:ro
+      - ./out:/app/out
+    command: ["batch"]
+
+  visual:
+    build: .
+    image: dxa-ai-metrics:latest
+    volumes:
+      - ./config:/app/config:ro
+      - ./visual_out:/app/visual_out
+    command: ["visual", "--save", "/app/visual_out"]
+
+  api:
+    build: .
+    image: dxa-ai-metrics:latest
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./config:/app/config:ro
+      - ./out:/app/out
+    command: ["api", "--host", "0.0.0.0", "--port", "8000"]
